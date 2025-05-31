@@ -537,7 +537,7 @@ export default function InvoiceGenerator() {
                             />
                           </div>
                           <div>
-                            <Label className="text-sm font-medium text-gray-700">Rate ($)</Label>
+                            <Label className="text-sm font-medium text-gray-700">Rate </Label>
                             <Input
                               type="number"
                               value={item.rate}
@@ -551,7 +551,7 @@ export default function InvoiceGenerator() {
                             <Label className="text-sm font-medium text-gray-700">Amount</Label>
                             <div className="flex items-center gap-1 sm:gap-2 mt-1">
                               <Input
-                                value={`$${Number(item.amount || 0).toFixed(2)}`}
+                                value={`${Number(item.amount || 0).toFixed(2)}`}
                                 readOnly
                                 className="bg-gray-100 font-medium"
                               />
@@ -719,16 +719,16 @@ export default function InvoiceGenerator() {
                     <div className="w-full sm:w-64 md:w-72 space-y-2">
                       <div className="flex justify-between py-2 text-gray-700">
                         <span>Subtotal:</span>
-                        <span className="font-medium">${subtotal.toFixed(2)}</span>
+                        <span className="font-medium">{subtotal.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between py-2 text-gray-700">
                         <span>Tax ({invoiceData.taxRate}%):</span>
-                        <span className="font-medium">${taxAmount.toFixed(2)}</span>
+                        <span className="font-medium">{taxAmount.toFixed(2)}</span>
                       </div>
                       <Separator className="my-2 sm:my-3" />
                       <div className="flex justify-between py-2 text-base sm:text-lg font-bold text-gray-900">
                         <span>Total:</span>
-                        <span>${total.toFixed(2)}</span>
+                        <span>{total.toFixed(2)}</span>
                       </div>
                     </div>
                   </div>
