@@ -442,6 +442,10 @@ export default function InvoiceGenerator() {
                       value={invoiceData.invoiceNumber}
                       onChange={(e) => setInvoiceData((prev) => ({ ...prev, invoiceNumber: e.target.value }))}
                       className="mt-1"
+                      min="0"
+                      max="100"
+                      step="0.1"
+                      
                     />
                   </div>
                   <div>
@@ -532,7 +536,7 @@ export default function InvoiceGenerator() {
                                 updateLineItem(item.id, "quantity", Number.parseFloat(e.target.value) || 0)
                               }
                               min="0"
-                              step="0.1"
+                              step="100"
                               className="mt-1"
                             />
                           </div>
@@ -543,7 +547,8 @@ export default function InvoiceGenerator() {
                               value={item.rate}
                               onChange={(e) => updateLineItem(item.id, "rate", Number.parseFloat(e.target.value) || 0)}
                               min="0"
-                              step="0.01"
+                              
+                              step="100"
                               className="mt-1"
                             />
                           </div>
